@@ -1,5 +1,7 @@
 # Privacy-Preserving Learning Analytics
 
+[![CI](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml)
+
 **A reproducible privacy–utility benchmark using federated learning and differential privacy on synthetic learner data.**
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
