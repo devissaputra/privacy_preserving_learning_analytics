@@ -1,0 +1,5 @@
+{
+  "federated_accuracy": 0.77,
+  "dp_accuracy_noise_0_10": 0.769,
+  "utility_delta": 0.001
+}
