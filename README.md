@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml)
 
+
+**Category:** AI in Education
 **A reproducible privacy–utility benchmark using federated learning and differential privacy on synthetic learner data.**
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
@@ -12,7 +14,7 @@
 
 Learning analytics can be useful while still collecting too much. This repo makes privacy an engineering variable rather than a footnote by comparing centralized, federated, and noisy training regimes on the same prediction task.
 
-The engineering goal is simple: make the research logic inspectable. Every metric in the demo can be traced back to a small function, the demo data can be regenerated from a fixed seed, and the limitations are stated next to the claims rather than buried at the end.
+The benchmark keeps centralized, federated, and noisy training paths comparable by using the same synthetic prediction task and evaluation logic. This makes the privacy cost visible instead of mixing it with unrelated changes in data or model design.
 
 ## Research questions
 
@@ -32,7 +34,7 @@ The reference pipeline follows five stages:
 4. **DP clipping + noise**
 5. **Privacy–utility evaluation**
 
-The current implementation is deliberately compact enough to audit. It is a foundation for a real study, not a theatrical “AI demo.”
+The baseline is intentionally compact so clipping, aggregation, and utility changes can be audited before formal privacy accounting or secure aggregation is added.
 
 ## Core outputs
 
