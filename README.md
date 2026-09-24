@@ -24,7 +24,7 @@ The demonstration keeps the federated training path fixed while varying injected
 
 ## What the repository does
 
-![Pipeline](docs/images/pipeline.png)
+![Pipeline](docs/images/pipeline.svg)
 
 The reference pipeline follows five stages:
 
@@ -81,7 +81,7 @@ privacy_preserving_learning_analytics/
 
 ## Research design in one picture
 
-![Research map](docs/images/research_map.png)
+![Research map](docs/images/research_map.svg)
 
 The fuller design rationale is in [`docs/research_design.md`](docs/research_design.md), including constructs, assumptions, validation steps, and a proposed empirical extension.
 
