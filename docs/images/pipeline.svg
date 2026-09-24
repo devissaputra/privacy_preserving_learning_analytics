@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Privacy-Preserving Learning Analytics pipeline</title>
+<desc id="desc">Synthetic learner silos feed local gradients into federated averaging; gradients are clipped and optionally perturbed with Gaussian noise before utility is evaluated. No formal privacy guarantee is claimed.</desc>
+<rect width="1200" height="675" fill="#f8fafc"/>
+<text x="60" y="78" font-family="Arial" font-size="38" font-weight="700" fill="#0f172a">Federated clipping-and-noise demonstration</text>
+<text x="60" y="116" font-family="Arial" font-size="20" fill="#64748b">Implemented path — synthetic data, no ε accounting, no secure aggregation</text>
+<g font-family="Arial" text-anchor="middle">
+<rect x="45" y="220" width="190" height="150" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/><text x="140" y="270" font-size="21" font-weight="700" fill="#1e3a8a">1. Local silos</text><text x="140" y="310" font-size="18" fill="#334155">synthetic clients</text>
+<rect x="280" y="220" width="190" height="150" rx="18" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/><text x="375" y="270" font-size="21" font-weight="700" fill="#166534">2. Gradients</text><text x="375" y="310" font-size="18" fill="#334155">computed locally</text>
+<rect x="515" y="220" width="190" height="150" rx="18" fill="#ecfeff" stroke="#22d3ee" stroke-width="2"/><text x="610" y="270" font-size="21" font-weight="700" fill="#155e75">3. Aggregate</text><text x="610" y="310" font-size="18" fill="#334155">mean gradient</text>
+<rect x="750" y="220" width="190" height="150" rx="18" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/><text x="845" y="270" font-size="21" font-weight="700" fill="#9a3412">4. Clip + noise</text><text x="845" y="305" font-size="18" fill="#334155">norm clipping</text><text x="845" y="334" font-size="18" fill="#334155">Gaussian noise</text>
+<rect x="985" y="220" width="170" height="150" rx="18" fill="#f3e8ff" stroke="#c084fc" stroke-width="2"/><text x="1070" y="270" font-size="21" font-weight="700" fill="#6b21a8">5. Evaluate</text><text x="1070" y="305" font-size="18" fill="#334155">accuracy</text><text x="1070" y="334" font-size="18" fill="#334155">utility delta</text>
+</g>
+<g stroke="#64748b" stroke-width="4"><path d="M235 295H280"/><path d="M470 295H515"/><path d="M705 295H750"/><path d="M940 295H985"/></g>
+<rect x="145" y="455" width="910" height="120" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="600" y="500" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#0f172a">Interpretation boundary</text>
+<text x="600" y="538" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">Noise sensitivity is demonstrated; formal differential privacy requires an accountant and explicit ε/δ reporting.</text>
+</svg>
