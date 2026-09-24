@@ -2,49 +2,48 @@
 
 [![CI](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml)
 
+**Category:** AI in Education  
+**A reproducible federated-learning demonstration for studying data-local training and the utility effects of gradient clipping and Gaussian noise on synthetic learner data.**
 
-**Category:** AI in Education
-**A reproducible privacy–utility demonstration using federated learning, gradient clipping, and Gaussian noise on synthetic learner data.**
+> Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, institutions, or a formal privacy guarantee.
 
-> Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
-
-![Architecture](docs/images/architecture.png)
+![Architecture](docs/images/architecture.svg)
 
 ## Why this project exists
 
-Learning analytics can be useful while still collecting too much. This repo makes privacy an engineering variable rather than a footnote by comparing federated training under several clipping-and-noise settings on the same synthetic prediction task.
+Learning analytics can be useful while still collecting too much. This repository explores one engineering pattern for reducing raw-data movement: learner records remain in synthetic client shards while model gradients are aggregated centrally.
 
-The demonstration keeps the federated training path fixed while varying injected gradient noise. This isolates one utility trade-off without presenting the experiment as a formal differential-privacy guarantee.
+The implementation can clip gradients and add Gaussian noise before aggregation. That is useful for studying utility sensitivity, but **it is not a formal differential-privacy implementation** because the repository does not include privacy accounting, ε/δ reporting, secure aggregation, or an explicit threat-model evaluation.
 
 ## Research questions
 
-1. How much utility is retained when raw learner records stay local?
-2. How does clipping and noise change model quality?
-3. What privacy–utility trade-offs should be reported before deployment?
+1. What utility does the federated baseline achieve when raw synthetic learner records remain local?
+2. How does gradient clipping and added Gaussian noise change model accuracy on the same synthetic task?
+3. What additional evidence would be required before making a formal privacy claim?
 
 ## What the repository does
 
 ![Pipeline](docs/images/pipeline.svg)
 
-The reference pipeline follows five stages:
+The implemented pipeline follows five stages:
 
 1. **Local learner silos**
 2. **Local gradients**
 3. **Federated aggregation**
-4. **Gradient clipping + noise**
-5. **Privacy–utility evaluation**
+4. **Gradient clipping + optional Gaussian noise**
+5. **Utility evaluation**
 
 The baseline is intentionally compact so clipping, aggregation, and utility changes can be audited before formal privacy accounting, secure aggregation, or attack-based privacy evaluation is added.
 
 ## Core outputs
 
 - `federated_accuracy`
-- `dp_accuracy_noise_0_10`
+- `noisy_federated_accuracy_noise_0_10`
 - `utility_delta`
 
-![Synthetic demo dashboard](docs/images/demo_dashboard.png)
+![Synthetic utility demonstration](docs/images/demo_dashboard.svg)
 
-The dashboard above is generated from **synthetic data** and is included only to show what the analysis surface looks like. It is not a reported empirical result.
+The dashboard is generated from **synthetic data**. It reports software outputs for one seeded demonstration, not an empirical education result and not a privacy guarantee.
 
 ## Quick start
 
@@ -67,12 +66,12 @@ docker run --rm privacy_preserving_learning_analytics
 
 ```text
 privacy_preserving_learning_analytics/
-├── src/privacy_preserving_learning_analytics/        # core implementation and synthetic-data generator
-├── examples/demo.py        # end-to-end reproducible demo
-├── tests/                  # executable unit tests
-├── docs/                   # research design, data dictionary, references
-│   └── images/             # original project diagrams and demo visualisations
-├── results/                # synthetic demo outputs only
+├── src/privacy_preserving_learning_analytics/  # core implementation and synthetic-data generator
+├── examples/demo.py                            # end-to-end reproducible demo
+├── tests/                                      # executable unit tests
+├── docs/                                       # research design, data dictionary, references
+│   └── images/                                 # auditable project diagrams
+├── results/                                    # synthetic demo outputs only
 ├── config/default.yaml
 ├── Dockerfile
 ├── Makefile
@@ -95,19 +94,21 @@ The fuller design rationale is in [`docs/research_design.md`](docs/research_desi
 
 ## Responsible-use boundaries
 
-- Noise scale in this demo is not converted into a formal epsilon guarantee.
+- Noise scale in this demo is **not** converted into a formal epsilon guarantee.
 - Synthetic clients do not reproduce real institutional heterogeneity.
-- Federated learning reduces data movement but does not, by itself, guarantee privacy.
+- Federated learning reduces raw-data movement but does not, by itself, guarantee privacy.
+- Clipping plus Gaussian noise should not be described as differential privacy without a valid mechanism definition and accountant.
 
 ## Strong next experiments
 
-- Integrate Opacus or TensorFlow Privacy for formal accounting.
-- Add secure aggregation and membership-inference attacks.
+- Integrate Opacus or TensorFlow Privacy with explicit ε/δ accounting.
+- Add secure aggregation and a stated adversary/threat model.
+- Add membership-inference or related attack-based evaluation.
 - Benchmark non-IID client distributions and fairness across learner subgroups.
 
 ## References
 
-See [`docs/references.md`](docs/references.md). The references are there to locate the project in current AIED, learning-analytics, human-centered AI, and instructional-design research. They do **not** imply endorsement or affiliation.
+See [`docs/references.md`](docs/references.md). The references locate the project in current AIED, learning-analytics, human-centered AI, and privacy research. They do **not** imply endorsement or affiliation.
 
 ## Citation
 
