@@ -2,21 +2,21 @@
 
 ## Project aim
 
-Learning analytics can be useful while still collecting too much. This repo makes privacy an engineering variable rather than a footnote by comparing centralized, federated, and noisy training regimes on the same prediction task.
+Learning analytics can be useful while still collecting too much. This repo makes privacy-related engineering choices visible by evaluating one federated training path under gradient clipping and several Gaussian-noise settings on the same synthetic prediction task.
 
 ## Research questions
 
-1. How much utility is retained when raw learner records stay local?
-2. How does clipping and noise change model quality?
-3. What privacy–utility trade-offs should be reported before deployment?
+1. What predictive utility does the implemented federated baseline achieve on the synthetic task?
+2. How does added gradient noise change that utility under a fixed training setup?
+3. What additional evidence would be required before making a formal privacy claim?
 
 ## Baseline analytic pipeline
 
 1. Local learner silos
 2. Local gradients
 3. Federated aggregation
-4. DP clipping + noise
-5. Privacy–utility evaluation
+4. Gradient clipping + Gaussian noise
+5. Utility evaluation and privacy-claim boundary
 
 ## Construct-to-measure discipline
 
