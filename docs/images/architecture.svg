@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Federated learning analytics architecture</title>
+<desc id="desc">Synthetic client shards compute local gradients, which are clipped, optionally perturbed with Gaussian noise, averaged, and used to update one shared model. No formal differential privacy guarantee is claimed.</desc>
+<rect width="1200" height="675" fill="#f8fafc"/>
+<text x="60" y="78" font-family="Arial" font-size="38" font-weight="700" fill="#0f172a">Federated learning analytics · implemented architecture</text>
+<text x="60" y="118" font-family="Arial" font-size="20" fill="#64748b">Synthetic demonstration with clipping and optional Gaussian noise</text>
+<g font-family="Arial" text-anchor="middle">
+<rect x="70" y="215" width="220" height="150" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/><text x="180" y="265" font-size="22" font-weight="700" fill="#1e3a8a">Client shards</text><text x="180" y="305" font-size="18" fill="#334155">local synthetic data</text>
+<rect x="365" y="215" width="220" height="150" rx="18" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/><text x="475" y="265" font-size="22" font-weight="700" fill="#166534">Local gradients</text><text x="475" y="305" font-size="18" fill="#334155">computed per shard</text>
+<rect x="660" y="215" width="220" height="150" rx="18" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/><text x="770" y="255" font-size="22" font-weight="700" fill="#9a3412">Clip + optional noise</text><text x="770" y="300" font-size="18" fill="#334155">norm clipping</text><text x="770" y="330" font-size="18" fill="#334155">Gaussian perturbation</text>
+<rect x="955" y="215" width="175" height="150" rx="18" fill="#f3e8ff" stroke="#c084fc" stroke-width="2"/><text x="1042" y="265" font-size="22" font-weight="700" fill="#6b21a8">Aggregate</text><text x="1042" y="305" font-size="18" fill="#334155">mean gradient</text>
+</g>
+<g stroke="#64748b" stroke-width="4"><path d="M290 290H365"/><path d="M585 290H660"/><path d="M880 290H955"/></g>
+<rect x="170" y="455" width="860" height="120" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="600" y="500" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#0f172a">Scope boundary</text>
+<text x="600" y="538" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">This code studies utility under clipping/noise; it does not compute ε/δ or claim differential privacy.</text>
+</svg>
