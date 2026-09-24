@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Privacy-Preserving Learning Analytics research map</title>
+<desc id="desc">Research map distinguishing implemented synthetic evidence from future formal privacy validation.</desc>
+<rect width="1200" height="675" fill="#f8fafc"/>
+<text x="60" y="78" font-family="Arial" font-size="38" font-weight="700" fill="#0f172a">Research map: implemented evidence vs next validation</text>
+<g font-family="Arial">
+<rect x="60" y="145" width="500" height="125" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="90" y="185" font-size="21" font-weight="700" fill="#2563eb">Implemented question 1</text><text x="90" y="225" font-size="19" fill="#334155">What utility does the federated baseline achieve?</text>
+<rect x="640" y="145" width="500" height="125" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="670" y="185" font-size="21" font-weight="700" fill="#166534">Evidence</text><text x="670" y="225" font-size="19" fill="#334155">Federated accuracy on the seeded synthetic task</text>
+<rect x="60" y="300" width="500" height="125" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="90" y="340" font-size="21" font-weight="700" fill="#0e7490">Implemented question 2</text><text x="90" y="380" font-size="19" fill="#334155">How does added gradient noise change utility?</text>
+<rect x="640" y="300" width="500" height="125" rx="18" fill="#fff" stroke="#cbd5e1" stroke-width="2"/><text x="670" y="340" font-size="21" font-weight="700" fill="#166534">Evidence</text><text x="670" y="380" font-size="19" fill="#334155">Accuracy across several noise standard deviations</text>
+<rect x="60" y="455" width="500" height="125" rx="18" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/><text x="90" y="495" font-size="21" font-weight="700" fill="#9a3412">Next research question</text><text x="90" y="535" font-size="19" fill="#334155">What formal privacy guarantee is achieved?</text>
+<rect x="640" y="455" width="500" height="125" rx="18" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/><text x="670" y="495" font-size="21" font-weight="700" fill="#9a3412">Required next evidence</text><text x="670" y="530" font-size="19" fill="#334155">Privacy accountant, ε/δ, threat model, attacks,</text><text x="670" y="558" font-size="19" fill="#334155">and secure-aggregation assumptions</text>
+</g>
+</svg>
