@@ -38,10 +38,8 @@ The baseline is intentionally compact so clipping, aggregation, and utility chan
 
 ## Core outputs
 
-- `central_accuracy`
 - `federated_accuracy`
-- `dp_accuracy`
-- `gradient_norm`
+- `dp_accuracy_noise_0_10`
 - `utility_delta`
 
 ![Synthetic demo dashboard](docs/images/demo_dashboard.png)
