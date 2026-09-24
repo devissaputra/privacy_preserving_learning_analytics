@@ -4,7 +4,7 @@
 
 
 **Category:** AI in Education
-**A reproducible privacy–utility benchmark using federated learning and differential privacy on synthetic learner data.**
+**A reproducible privacy–utility demonstration using federated learning, gradient clipping, and Gaussian noise on synthetic learner data.**
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, or institutions.
 
@@ -12,9 +12,9 @@
 
 ## Why this project exists
 
-Learning analytics can be useful while still collecting too much. This repo makes privacy an engineering variable rather than a footnote by comparing centralized, federated, and noisy training regimes on the same prediction task.
+Learning analytics can be useful while still collecting too much. This repo makes privacy an engineering variable rather than a footnote by comparing federated training under several clipping-and-noise settings on the same synthetic prediction task.
 
-The benchmark keeps centralized, federated, and noisy training paths comparable by using the same synthetic prediction task and evaluation logic. This makes the privacy cost visible instead of mixing it with unrelated changes in data or model design.
+The demonstration keeps the federated training path fixed while varying injected gradient noise. This isolates one utility trade-off without presenting the experiment as a formal differential-privacy guarantee.
 
 ## Research questions
 
@@ -31,10 +31,10 @@ The reference pipeline follows five stages:
 1. **Local learner silos**
 2. **Local gradients**
 3. **Federated aggregation**
-4. **DP clipping + noise**
+4. **Gradient clipping + noise**
 5. **Privacy–utility evaluation**
 
-The baseline is intentionally compact so clipping, aggregation, and utility changes can be audited before formal privacy accounting or secure aggregation is added.
+The baseline is intentionally compact so clipping, aggregation, and utility changes can be audited before formal privacy accounting, secure aggregation, or attack-based privacy evaluation is added.
 
 ## Core outputs
 
