@@ -1,3 +1,7 @@
+# Calculation reading guide: ../CALCULATIONS.md (repository root).
+# g = Xᵀ(sigmoid(Xw)-y)/n; w_next = w - learning_rate×mean(client gradients).
+# Clients receive equal weight, not sample-size weight. Clipping plus noise has no stated epsilon/delta accountant, secure aggregation, or attack evaluation. It is not a formal differential-privacy guarantee.
+
 from __future__ import annotations
 import numpy as np
 

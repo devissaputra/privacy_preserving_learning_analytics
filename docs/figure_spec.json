@@ -1,0 +1,35 @@
+{
+  "question": "What changes when training remains within data silos?",
+  "data": "Synthetic client shards and a separate synthetic test set.",
+  "method": "Compute client-mean logistic gradients; clip; optionally add Gaussian noise; average clients and update shared weights.",
+  "formula": "g = Xᵀ(sigmoid(Xw)-y)/n; w_next = w - learning_rate×mean(client gradients).",
+  "interpretation": "Clients receive equal weight, not sample-size weight. Clipping plus noise has no stated epsilon/delta accountant, secure aggregation, or attack evaluation. It is not a formal differential-privacy guarantee.",
+  "status": "SYNTHETIC / RULE-BASED PROTOTYPE | no educational validity claim",
+  "source": "results/demo_metrics.json",
+  "rows": [
+    {
+      "label": "federated_accuracy",
+      "path": [
+        "federated_accuracy"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "noisy_federated_accuracy_noise_0_10",
+      "path": [
+        "noisy_federated_accuracy_noise_0_10"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "utility_delta",
+      "path": [
+        "utility_delta"
+      ],
+      "unit": "unitless"
+    }
+  ],
+  "table_title": "Selected recorded values (units and context shown)",
+  "evidence_note": "See CALCULATIONS.md for data status, execution scope and interpretation.",
+  "finding": "This federated-learning demonstration keeps synthetic learner records in local shards while sharing clipped, optionally noisy gradients. A separate synthetic test set shows how noise changes predictive utility, with the update rule and client weighting exposed for inspection. The project demonstrates data-local computation, while explicitly leaving formal privacy accounting, secure aggregation, and adversarial evaluation unimplemented."
+}

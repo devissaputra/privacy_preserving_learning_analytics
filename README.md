@@ -1,5 +1,21 @@
 # Privacy-Preserving Learning Analytics
 
+This federated-learning demonstration keeps synthetic learner records in local shards while sharing clipped, optionally noisy gradients. A separate synthetic test set shows how noise changes predictive utility, with the update rule and client weighting exposed for inspection. The project demonstrates data-local computation, while explicitly leaving formal privacy accounting, secure aggregation, and adversarial evaluation unimplemented.
+
+## Start here
+
+- [Calculations, evidence and verification scope](CALCULATIONS.md)
+- [Figure sources and exact numerical paths](docs/figure_spec.json)
+- [Data status](data/README.md)
+
+![Study question, data, design and interpretation](assets/review_overview.svg)
+
+![Defined calculation and source-linked evidence](assets/review_calculations.svg)
+
+**Review scope:** The existing suite requires unavailable dependencies; no full-suite pass is claimed. The bundled demonstration executed successfully in this review.
+
+## Detailed project documentation
+
 [![CI](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/privacy_preserving_learning_analytics/actions/workflows/ci.yml)
 
 **Category:** AI in Education  
@@ -7,7 +23,6 @@
 
 > Research prototype. All bundled data and results are synthetic demonstrations. Nothing in this repository should be interpreted as evidence about real learners, teachers, institutions, or a formal privacy guarantee.
 
-![Architecture](docs/images/architecture.svg)
 
 ## Why this project exists
 
@@ -23,7 +38,6 @@ The implementation can clip gradients and add Gaussian noise before aggregation.
 
 ## What the repository does
 
-![Pipeline](docs/images/pipeline.svg)
 
 The implemented pipeline follows five stages:
 
@@ -41,7 +55,6 @@ The baseline is intentionally compact so clipping, aggregation, and utility chan
 - `noisy_federated_accuracy_noise_0_10`
 - `utility_delta`
 
-![Synthetic utility demonstration](docs/images/demo_dashboard.svg)
 
 The dashboard is generated from **synthetic data**. It reports software outputs for one seeded demonstration, not an empirical education result and not a privacy guarantee.
 
@@ -80,7 +93,6 @@ privacy_preserving_learning_analytics/
 
 ## Research design in one picture
 
-![Research map](docs/images/research_map.svg)
 
 The fuller design rationale is in [`docs/research_design.md`](docs/research_design.md), including constructs, assumptions, validation steps, and a proposed empirical extension.
 
